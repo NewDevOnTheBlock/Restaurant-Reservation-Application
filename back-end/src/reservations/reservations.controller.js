@@ -44,6 +44,7 @@ async function validateDate(req, res, next) {
   const { data = {} } = req.body;
   const date = new Date(data.reservation_date)
   const day = date.getUTCDay()
+  const newDate = new Date()
 
   if (!Date.parse(date)) {
     next({
@@ -57,7 +58,16 @@ async function validateDate(req, res, next) {
       message: `Restaurant closed on Tuesday, please choose a different day of the week.`
     })
   }
-  if (date < new Date()) {
+
+  // 
+  // console.log(date)
+  // console.log("Date: ", JSON.stringify(date).slice(12, 24))
+  //console.log("New date: ", JSON.stringify(newDate).slice(1, 11))
+  console.log("Result", JSON.stringify(date).slice(12, 24) < JSON.stringify(newDate).slice(12, 24))
+  if (
+    JSON.stringify(date).slice(1, 11) < JSON.stringify(newDate).slice(1, 11) &&
+    JSON.stringify(date).slice(12, 24) < JSON.stringify(newDate).slice(12, 24)
+  ) {
     return next({
       status: 400,
       message: `Reservation must be a future date.`
