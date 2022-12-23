@@ -2,6 +2,12 @@ const router = require("express").Router();
 const controller = require("./reservations.controller");
 const methodNotAllowed = require("../errors/methodNotAllowed")
 
+// edit specific reservation ID
+router.route("/:reservation_id/edit")
+    .get(controller.read)
+    .put(controller.update)
+    .all(methodNotAllowed);
+
 // status for a specific reservation ID
 router.route("/:reservation_id/status")
     .get(controller.read)
