@@ -25,7 +25,6 @@ function ReservationForm({ reservation, setReservation, submitHandler }) {
   return (
     <form onSubmit={submitHandler}>
       {/* <ErrorAlert error={error} /> */}
-      <p>we look forward to your arrival</p>
       <div className="form-group row">
         <label className="col-sm-2 col-form-label">First name:</label>
         <div className="col-sm-10">

@@ -50,7 +50,7 @@ export default function SeatTable() {
 
     seatTable(reservation_id, tableId, abortController.signal)
       .then(() => {
-        history.push("/dashboard");
+        history.push("/");
       })
       .catch(setUpdateTableError);
     return () => abortController.abort();
