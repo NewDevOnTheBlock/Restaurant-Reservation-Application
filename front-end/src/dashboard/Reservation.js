@@ -49,14 +49,14 @@ export default function Reservation({ reservation, loadDashboard }) {
           {status === "booked" ? (
             <div>
               <a
-                href={`/reservations/${reservation_id}/seat`}
+                href={`/reservations/${reservation.reservation_id}/seat`}
                 type="button"
                 className="btn btn-primary btn-block"
               >
                 Seat
               </a>
               <a
-                href={`/reservations/${reservation_id}/edit`}
+                href={`/reservations/${reservation.reservation_id}/edit`}
                 type="button"
                 className="btn btn-secondary btn-block"
               >

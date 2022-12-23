@@ -26,18 +26,23 @@ export default function Routes() {
       <Route exact={true} path="/">
         <Redirect to={"/dashboard"} />
       </Route>
+      
       <Route exact={true} path="/reservations">
         <Redirect to={"/dashboard"} />
       </Route>
+
       <Route path="/reservations/new">
         <CreateReservation />
       </Route>
+
       <Route path="/reservations/:reservation_id/seat">
         <SeatTable />
       </Route>
+
       <Route path="/reservations/:reservation_id/status">
         <ReservationStatus />
       </Route>
+
       <Route path="/reservations/:reservation_id/edit">
         <EditReservation />
       </Route>
@@ -45,6 +50,7 @@ export default function Routes() {
       <Route exact={true} path="/tables">
         <Redirect to={"/dashboard"} />
       </Route>
+
       <Route path="/tables/new">
         <CreateTable />
       </Route>
